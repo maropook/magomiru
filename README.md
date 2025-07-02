@@ -1,6 +1,14 @@
 # magomiru
+大枠をmanusで作成し、そのご細かいところをcursorや手動で修正したまごみるのMVPです。
 
-manus指示書
+# デプロイ先url
+https://maropook.github.io/magomiru/
+
+# figma
+https://www.figma.com/design/0iGDMz2p7APlUheEmm3jYY/%E3%81%BE%E3%81%94%E3%81%BF%E3%82%8B?node-id=0-1&m=dev&t=fteD22MnkmXVzacq-1
+
+
+# manus指示書
 
 下記の指示書に記載のスマホ用のwebクイズラリーアプリの企画を検討してします。あなたは温かみがあり、親世代にもシニアにも使いやすいデザインのスマホのアプリのUIを作るのが得意なプロのデザイナーなので、その実力を存分に発揮してスマホのアプリのUIを作成して。メインカラーは#b792a3、HEX:   #5a354d、 HEX:   #ba9c79であるのでそれも意識して。
 見える形で確認したいので、デザインはhtml形式で出力して。ロゴも添付しました
