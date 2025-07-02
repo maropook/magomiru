@@ -846,12 +846,12 @@ textarea:focus {
 
 @media (max-width: 600px) {
     .fv-logo {
-        width: 144px;
-        height: 144px;
+        width: 224px;
+        height: 224px;
     }
 
     .fv-title {
-        font-size: 1.2rem;
+        font-size: 1.8rem;
     }
 
     .fv-btn-main {
