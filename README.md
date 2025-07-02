@@ -7,6 +7,8 @@ https://maropook.github.io/magomiru/
 # figma
 https://www.figma.com/design/0iGDMz2p7APlUheEmm3jYY/%E3%81%BE%E3%81%94%E3%81%BF%E3%82%8B?node-id=0-1&m=dev&t=fteD22MnkmXVzacq-1
 
+# github
+https://github.com/maropook/magomiru/
 
 # manus指示書
 
