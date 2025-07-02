@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>まごみる - ベビーシッターマッチングアプリ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 画面1: アプリ説明＋登録画面に向かうシニアか親か選ぶ -->
+    <div id="screen1" class="screen active">
+        <div class="container">
+            <div class="logo-section">
+                <img src="logo.png" alt="まごみる" class="logo">
+                <h1 class="app-title">まごみる</h1>
+            </div>
+            
+            <div class="concept-section">
+                <h2 class="concept-title">シニアと子育て世代を繋ぐ<br>温かいベビーシッター</h2>
+                <p class="concept-description">
+                    働きたい、子どもが好きなシニアと、<br>
+                    時間と預ける人がいない子育て世代を繋ぎます。<br>
+                    安心・安全で温かみのあるサービスです。
+                </p>
+            </div>
+            
+            <div class="user-select-section">
+                <h3 class="select-title">どちらでご利用ですか？</h3>
+                <div class="user-buttons">
+                    <button class="user-btn parent-btn" onclick="showScreen(2)">
+                        <div class="btn-icon">👨‍👩‍👧‍👦</div>
+                        <div class="btn-text">
+                            <span class="btn-title">子育て世代</span>
+                            <span class="btn-subtitle">子どもを預けたい</span>
+                        </div>
+                    </button>
+                    <button class="user-btn senior-btn" onclick="showScreen('senior')">
+                        <div class="btn-icon">👴👵</div>
+                        <div class="btn-text">
+                            <span class="btn-title">シニア</span>
+                            <span class="btn-subtitle">ベビーシッターをしたい</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 画面2: アカウント登録 -->
+    <div id="screen2" class="screen">
+        <div class="container">
+            <div class="header">
+                <button class="back-btn" onclick="showScreen(1)">←</button>
+                <h2 class="screen-title">アカウント登録</h2>
+            </div>
+            
+            <div class="form-section">
+                <div class="form-group">
+                    <label for="name">お名前</label>
+                    <input type="text" id="name" placeholder="山田 太郎">
+                </div>
+                
+                <div class="form-group">
+                    <label for="age">年齢</label>
+                    <select id="age">
+                        <option value="">選択してください</option>
+                        <option value="20-25">20-25歳</option>
+                        <option value="26-30">26-30歳</option>
+                        <option value="31-35">31-35歳</option>
+                        <option value="36-40">36-40歳</option>
+                        <option value="41-45">41-45歳</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">メールアドレス</label>
+                    <input type="email" id="email" placeholder="example@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">電話番号</label>
+                    <input type="tel" id="phone" placeholder="090-1234-5678">
+                </div>
+                
+                <button class="primary-btn" onclick="showScreen(3)">登録する</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 画面3: 預けるための条件設定 -->
+    <div id="screen3" class="screen">
+        <div class="container">
+            <div class="header">
+                <button class="back-btn" onclick="showScreen(2)">←</button>
+                <h2 class="screen-title">預ける条件を設定</h2>
+            </div>
+            
+            <div class="form-section">
+                <div class="form-group">
+                    <label>お住まいの地域</label>
+                    <select>
+                        <option value="">選択してください</option>
+                        <option value="tokyo">東京都</option>
+                        <option value="kanagawa">神奈川県</option>
+                        <option value="saitama">埼玉県</option>
+                        <option value="chiba">千葉県</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>お子様の年齢</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" value="0-1">
+                            <span>0-1歳</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" value="2-3">
+                            <span>2-3歳</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" value="4-6">
+                            <span>4-6歳</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" value="7-12">
+                            <span>7-12歳</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>希望日時</label>
+                    <input type="datetime-local" id="datetime">
+                </div>
+                
+                <div class="form-group">
+                    <label>預ける時間</label>
+                    <select>
+                        <option value="">選択してください</option>
+                        <option value="1">1時間</option>
+                        <option value="2">2時間</option>
+                        <option value="3">3時間</option>
+                        <option value="4">4時間</option>
+                        <option value="5">5時間以上</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>特別な要望</label>
+                    <textarea placeholder="アレルギーや特別な配慮が必要なことがあれば記入してください"></textarea>
+                </div>
+                
+                <button class="primary-btn" onclick="showScreen(4)">マッチング開始</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 画面4: マッチング確定 -->
+    <div id="screen4" class="screen">
+        <div class="container">
+            <div class="header">
+                <h2 class="screen-title">マッチング完了</h2>
+            </div>
+            
+            <div class="match-result">
+                <div class="success-icon">✅</div>
+                <h3 class="success-title">予約が確定しました！</h3>
+                
+                <div class="sitter-card">
+                    <div class="sitter-photo">
+                        <div class="photo-placeholder">👵</div>
+                    </div>
+                    <div class="sitter-info">
+                        <h4 class="sitter-name">田中 花子さん</h4>
+                        <div class="sitter-details">
+                            <p>年齢: 65歳</p>
+                            <p>経験: 子育て経験豊富</p>
+                            <p>評価: ⭐⭐⭐⭐⭐ (4.8)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="booking-details">
+                    <h4>予約詳細</h4>
+                    <div class="detail-item">
+                        <span class="detail-label">日時:</span>
+                        <span class="detail-value">2025年1月15日 14:00-17:00</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">場所:</span>
+                        <span class="detail-value">ご自宅</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">料金:</span>
+                        <span class="detail-value">3,000円 (1,000円/時間)</span>
+                    </div>
+                </div>
+                
+                <button class="primary-btn" onclick="showScreen(5)">決済に進む</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 画面5: 決済画面 -->
+    <div id="screen5" class="screen">
+        <div class="container">
+            <div class="header">
+                <button class="back-btn" onclick="showScreen(4)">←</button>
+                <h2 class="screen-title">お支払い</h2>
+            </div>
+            
+            <div class="payment-section">
+                <div class="service-summary">
+                    <h4>サービス内容</h4>
+                    <div class="summary-item">
+                        <span>ベビーシッター: 田中 花子さん</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>日時: 2025年1月15日 14:00-17:00</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>時間: 3時間</span>
+                    </div>
+                    <div class="summary-total">
+                        <span>合計: 3,000円</span>
+                    </div>
+                </div>
+                
+                <div class="payment-method">
+                    <h4>お支払い方法</h4>
+                    <div class="payment-options">
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="credit" checked>
+                            <span>💳 クレジットカード</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="bank">
+                            <span>🏦 銀行振込</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="cash">
+                            <span>💰 現金（当日支払い）</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="card-info">
+                    <div class="form-group">
+                        <label>カード番号</label>
+                        <input type="text" placeholder="1234 5678 9012 3456">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>有効期限</label>
+                            <input type="text" placeholder="MM/YY">
+                        </div>
+                        <div class="form-group">
+                            <label>セキュリティコード</label>
+                            <input type="text" placeholder="123">
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="primary-btn" onclick="showScreen(6)">決済する</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 画面6: 決済完了画面 -->
+    <div id="screen6" class="screen">
+        <div class="container">
+            <div class="completion-section">
+                <div class="completion-icon">🎉</div>
+                <h2 class="completion-title">決済完了</h2>
+                <p class="completion-message">
+                    お支払いが完了しました。<br>
+                    田中 花子さんとのベビーシッターサービスの<br>
+                    予約が確定いたしました。
+                </p>
+                
+                <div class="next-steps">
+                    <h4>今後の流れ</h4>
+                    <div class="step-item">
+                        <span class="step-number">1</span>
+                        <span class="step-text">当日までに田中さんから連絡があります</span>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-number">2</span>
+                        <span class="step-text">当日は時間通りにお伺いします</span>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-number">3</span>
+                        <span class="step-text">サービス後に評価をお願いします</span>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="secondary-btn" onclick="showScreen(1)">ホームに戻る</button>
+                    <button class="primary-btn">マイページ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
